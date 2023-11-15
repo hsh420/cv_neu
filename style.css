@@ -18,10 +18,6 @@ body {
   --secondary: #87c4ff;
   --accent: #ffeed9;
   --warn: #420d09;
-  --dark-scheme-background: #6c5f5b;
-  --dark-scheme-color: #f6f1ee;
-  --dark-scheme-warn: #ed7d31;
-  --dark-scheme-accent: #4f4a45;
   font-family: "Open Sans", sans-serif;
 }
 
@@ -101,7 +97,7 @@ h6 {
 }
 
 .nav-link {
-  background-color: var(--accent);
+  background-color: var(--secondary);
   padding: 15px;
   border: 2px solid transparent;
   width: 100vw;
@@ -116,7 +112,7 @@ h6 {
 }
 
 .nav-link > a {
-  color: #000;
+  color: var(--warn);
   text-decoration: none;
 }
 
@@ -259,37 +255,31 @@ h6 {
 
 @media screen and (prefers-color-scheme: dark) {
   body {
-    background-color: var(--dark-scheme-background);
-    color: var(--dark-scheme-color);
+    --primary: #6c5f5b;
+    --secondary: #f6f1ee;
+    --accent: #4f4a45;
+    --warn: #ed7d31;
+    background-color: var(--primary);
+    color: var(--secondary);
   }
   .header {
-    background-image: linear-gradient(
-      var(--dark-scheme-accent) 90%,
-      var(--dark-scheme-color)
-    );
-    padding-bottom: 25px;
+    background-image: linear-gradient(var(--accent) 90%, var(--secondary));
+    padding-bottom: 20px;
+  }
+  .nav-link {
+    background-color: var(--secondary);
   }
   .hire-me-badge {
-    background-color: var(--dark-scheme-warn);
-    color: var(--dark-scheme-color);
-  }
-  .nav-link:hover {
-    background-color: var(--dark-scheme-background);
-    color: var(--accent);
-  }
-  .nav-link:hover a {
-    color: var(--accent);
+    color: var(--secondary);
   }
   .footer {
-    background-color: var(--dark-scheme-accent);
-    border-top: 2px dashed var(--dark-scheme-color);
-    background-image: none;
+    background-image: linear-gradient(
+      360deg,
+      var(--accent) 90%,
+      var(--secondary)
+    );
   }
   a:link {
-    color: var(--dark-scheme-color);
-    font-weight: bold;
-  }
-  .main-article + .main-article {
-    border-top: 2px solid var(--dark-scheme-color);
+    color: var(--secondary);
   }
 }
