@@ -269,6 +269,12 @@ h6 {
   .nav-link {
     background-color: var(--secondary);
   }
+  .nav-link > a:link {
+    color: var(--warn);
+  }
+  .nav-link > a:link:hover {
+    color: var(--accent);
+  }
   .hire-me-badge {
     color: var(--secondary);
   }
